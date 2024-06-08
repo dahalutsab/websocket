@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Client</title>
+</head>
+<body>
+    <script>
+        const ws = new WebSocket('ws://dahalutsab:Mr.Utsab@2120@dahalutsab-8080.githubpreview.dev');
+
+        ws.onopen = function() {
+            console.log('Connected to WebSocket server');
+            ws.send('Hello Server!');
+        };
+
+        ws.onmessage = function(event) {
+            console.log('Message from server: ' + event.data);
+        };
+
+        ws.onclose = function() {
+            console.log('Disconnected from WebSocket server');
+        };
+    </script>
+</body>
+</html>
